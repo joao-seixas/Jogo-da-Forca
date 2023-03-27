@@ -1,0 +1,110 @@
+@font-face {
+    font-family: DMMono;
+    src: url(fonts/DMMono-Regular.ttf);
+  }
+  
+  body {
+    font-family: DMMono;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .geral {
+    margin: 10px;
+  }
+
+  .placar {
+    margin: auto;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+
+  #imgForca {
+    display: block;
+    margin: 20px auto;
+  }
+
+  .pontos {
+    width: min(90vw, 250px);
+    margin: 10px auto 0 auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  #pontos {
+    border-radius: 8px;
+    height: 20px;
+    opacity: 0.5;
+  }
+
+  #spPalavraSecreta {
+    letter-spacing: 15px;
+    font-size: min(35px, 5vw);
+    font-weight: bold;
+    align-self: flex-end;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 5px 5px 15px;
+    box-shadow: 5px 5px 15px 1px #000000;
+  }
+  
+  #letras-jogadas {
+    height: 20px;
+    margin: 30px 0 20px 0;
+  }
+  
+  #spLetrasJogadas {
+    font-size: large;
+  }
+    
+  .btnNovaPalavra {
+    border: 1px solid black;
+    outline: none;
+    margin: 0 5px 0 5px;
+    appearance: none;
+    background-color: white;
+    border-radius: 24px;
+    border-style: none;
+    padding: 8px;
+    font-weight: bold;
+    box-shadow: 3px 3px 8px 1px #000000;
+    user-select: none;
+    transition: background-color 0.2s, box-shadow 0.15s;
+  }
+  
+  .ativo:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.25s;
+  }
+  
+  .ativo:active {
+    box-shadow: 2px 2px 6px 1px #000000;
+    transition: box-shadow 0.1s;
+  }
+  
+  .acertou {
+    background-color: lightgreen;
+  }
+  
+  .errou {
+    background-color: #c24242;
+  }
+  
+  .instrucoes {
+    list-style-type: none;
+    font-size: small;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .instrucoes-desativada {
+    color: gray;
+  }
+
+.audios {
+  display: none;
+}
