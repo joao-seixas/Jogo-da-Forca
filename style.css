@@ -14,11 +14,11 @@
   }
 
   .placar {
-    margin: auto;
-  }
-
-  .align-left {
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 0 0;
+    gap: 1rem;
   }
 
   #imgForca {
@@ -40,7 +40,8 @@
     opacity: 0.5;
   }
 
-  #spPalavraSecreta {
+  #palavraSecreta {
+    display: inline-block;
     letter-spacing: 15px;
     font-size: min(35px, 5vw);
     font-weight: bold;
@@ -52,8 +53,9 @@
   }
   
   #letras-jogadas {
+    font-weight: bold;
     height: 20px;
-    margin: 30px 0 20px 0;
+    margin: 1rem;
   }
   
   #spLetrasJogadas {
@@ -104,7 +106,3 @@
   .instrucoes-desativada {
     color: gray;
   }
-
-.audios {
-  display: none;
-}

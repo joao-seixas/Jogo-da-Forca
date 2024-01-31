@@ -1,14 +1,15 @@
-const spanPalavraSecreta = document.getElementById('spPalavraSecreta');
+const palavraSecreta = document.getElementById('palavraSecreta');
 const spanLetrasErradas = document.getElementById('spLetrasJogadas');
 const imagemForca = document.getElementById('imgForca');
 const botaoNovaPalavra = document.getElementById('btnNovaPalavra');
 const instrucoesNovoJogo = document.getElementById('instrucoes-novo-jogo');
 const instrucoesTeclado = document.getElementById('instrucoes-teclado');
-const audioAcerto = document.getElementById('audio-acerto');
-const audioErro = document.getElementById('audio-erro');
+const audioAcerto = new Audio('./audios/acerto.wav');
+const audioErro = new Audio('./audios/erro.wav');
 const jogos = document.getElementById('jogos');
 const vitorias = document.getElementById('vitorias');
 const derrotas = document.getElementById('derrotas');
+const rodape = document.getElementById('rodape');
 
 let placar = cookies();
 let jogo = new Jogo(palavras);
@@ -17,6 +18,7 @@ document.body.addEventListener('keyup', verificaTeclasGerais);
 botaoNovaPalavra.addEventListener('click', novoJogo);
 
 function inicializaJogo() {
+  if (navigator.maxTouchPoints > 0) rodape.style.display = 'none';
   criaTeclado();
   document.querySelectorAll('.tecla').forEach((tecla) => {
     tecla.addEventListener('click', teclou);
@@ -59,7 +61,7 @@ function verificaPalavra(letra) {
 }
 
 function atualizaPlacar() {
-  spanPalavraSecreta.textContent = jogo.palavraSecreta.join('');
+  palavraSecreta.textContent = jogo.palavraSecreta.join('');
   spanLetrasErradas.textContent = jogo.letrasErradas.join(' - ');
 }
 
@@ -96,7 +98,7 @@ function verificaVitoria() {
 
 function fimJogo() {
   falar(new SpeechSynthesisUtterance(jogo.palavraSorteada.toLowerCase()));
-  spanPalavraSecreta.textContent = jogo.palavraSorteada;
+  palavraSecreta.textContent = jogo.palavraSorteada;
   desativaElementos(true);
   atualizaPontos();
 }
@@ -119,7 +121,7 @@ function desativaElementos(acao) {
 }
 
 function derrota() {
-  spanPalavraSecreta.classList.add('errou');
+  palavraSecreta.classList.add('errou');
   placar.derrotas++;
   placar.setCookie('derrotas', placar.derrotas, 12);
 }
@@ -127,7 +129,7 @@ function derrota() {
 function vitoria() {
   let pontos = (7 - parseInt(jogo.erros)) ** 2;
 
-  spanPalavraSecreta.classList.add('acertou');
+  palavraSecreta.classList.add('acertou');
   placar.vitorias++;
   placar.setCookie('vitorias', placar.vitorias, 12);
   placar.pontos += pontos;
@@ -145,7 +147,7 @@ function falar(texto) {
 }
 
 function limpaResultado() {
-  spanPalavraSecreta.classList.remove('acertou', 'errou');
+  palavraSecreta.classList.remove('acertou', 'errou');
   atualizaForca();
   desativaElementos(false);
 }

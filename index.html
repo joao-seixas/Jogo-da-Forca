@@ -14,27 +14,11 @@
     <h1>Jogo da Forca</h1>
   </header>
   <main>
-    <table class="placar">
-      <tbody>
-        <tr>
-          <td class="align-left">Jogos: </td>
-          <td class="align-left" id="jogos"></td>
-        </tr>
-        <tr>
-          <td class="align-left">Viórias: </td>
-          <td class="align-left" id="vitorias"></td>
-        </tr>
-        <tr>
-          <td class="align-left">Derrotas: </td>
-          <td class="align-left" id="derrotas"></td>
-        </tr>
-      </tbody>
-    </table>
     <div id="forca" class="geral">
       <img id="imgForca" src="img/Forca00.png" width="200" height="253"
         alt="Desenho de uma forca onde vai se desenhando o enforcado conforme os erros cometidos no jogo">
-      <span id="spPalavraSecreta"></span>
     </div>
+    <div id="palavraSecreta"></div>
     <div id="letras-jogadas" class="geral">
       <span id="spLetrasJogadas"></span>
     </div>
@@ -43,17 +27,25 @@
       <button id="btnNovaPalavra" class="btnNovaPalavra" disabled>Novo Jogo</button>
     </div>
   </main>
-  <footer>
-    <ul class="instrucoes">
+  <footer class="rodape">
+    <div class="placar">
+      <div>
+        Jogos:
+        <span id="jogos"></span>
+        ・
+      </div>
+      <div>Viórias:
+        <span id="vitorias"></span>
+        ・
+      </div>
+      <div>Derrotas:
+        <span id="derrotas"></span>
+      </div>
+    </div>
+    <ul id="rodape" class="instrucoes">
       <li id="instrucoes-novo-jogo">Pressione ESC para uma nova palavra;</li>
       <li id="instrucoes-teclado">Utilize o teclado virtual ou pressione a letra no seu teclado.</li>
     </ul>
-    <audio id="audio-acerto" class="audios">
-      <source src="audios/acerto.wav" type="audio/wav">
-    </audio>
-    <audio id="audio-erro" class="audios">
-      <source src="audios/erro.wav" type="audio/wav">
-    </audio>
   </footer>
   <script src="./Jogo.js"></script>
   <script src="./cookies.js"></script>
