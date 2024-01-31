@@ -12,7 +12,7 @@ const derrotas = document.getElementById('derrotas');
 const rodape = document.getElementById('rodape');
 
 let placar = cookies();
-let jogo = new Jogo(palavras);
+const jogo = new Jogo(palavras);
 
 document.body.addEventListener('keyup', verificaTeclasGerais);
 botaoNovaPalavra.addEventListener('click', novoJogo);
