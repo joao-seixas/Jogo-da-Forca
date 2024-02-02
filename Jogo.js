@@ -15,7 +15,8 @@ letrasErradas - array com o conjunto de letras que foram jogadas e não pertence
 erros - quantidade de erros cometidos pelo jogador
 
 errou - booleano que indica se a última jogada foi errada (true) ou não (false)*/
-class Jogo {
+
+export class Jogo {
   constructor(palavras) {
     this.todasPalavras = palavras;
   }

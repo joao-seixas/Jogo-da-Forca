@@ -1,3 +1,8 @@
+import { Jogo } from './Jogo.js';
+import { cookies } from './cookies.js';
+import { palavras } from './palavras.js';
+import { criaTeclado } from './teclado/teclado.js';
+
 const palavraSecreta = document.getElementById('palavraSecreta');
 const spanLetrasErradas = document.getElementById('spLetrasJogadas');
 const imagemForca = document.getElementById('imgForca');
@@ -16,6 +21,7 @@ const jogo = new Jogo(palavras);
 
 document.body.addEventListener('keyup', verificaTeclasGerais);
 botaoNovaPalavra.addEventListener('click', novoJogo);
+window.addEventListener('load', () => inicializaJogo());
 
 function inicializaJogo() {
   if (navigator.maxTouchPoints > 0) rodape.style.display = 'none';
@@ -44,7 +50,7 @@ function novoJogo() {
 function teclou(evento) {
   verificaPalavra(evento.target.textContent);
   evento.target.disabled = true;
-  evento.target.classList.remove('ativo')
+  evento.target.classList.remove('ativo');
 }
 
 function verificaTeclasGerais(evento) {

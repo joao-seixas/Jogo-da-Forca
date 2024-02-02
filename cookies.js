@@ -1,4 +1,4 @@
-function cookies() {
+export function cookies() {
   const completeCookie = unescape(document.cookie);
   const separateCookies = completeCookie.split(';');
   let cookies = {};
