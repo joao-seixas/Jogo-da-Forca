@@ -1,5 +1,5 @@
 export function cookies() {
-  const completeCookie = unescape(document.cookie);
+  const completeCookie = decodeURIComponent(document.cookie);
   const separateCookies = completeCookie.split(';');
   let cookies = {};
   cookies.errors = [];
@@ -7,7 +7,7 @@ export function cookies() {
   cookies.setCookie = (name, value, months) => {
     let expireDate = new Date();
     expireDate.setMonth(expireDate.getMonth() + months);
-    document.cookie = name + '=' + escape(value) + ';' + 'expires=' + expireDate.toUTCString();
+    document.cookie = name + '=' + encodeURI(value) + ';' + 'expires=' + expireDate.toUTCString();
   }
 
   if (completeCookie) {
